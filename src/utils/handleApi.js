@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseUrl = "https://full-stack-todo-app-mern.onrender.com/"
+const baseUrl = "https://full-stack-todo-app-mern.onrender.com"
 
 const getAllToDo = (setToDo) => {
     axios
@@ -15,7 +15,7 @@ const getAllToDo = (setToDo) => {
 const addTodo = (text,setText,setToDo)=>{
 
     axios
-    .post(`${baseUrl}save`,{text})
+    .post(`${baseUrl}/save`,{text})
     .then((data)=>{
         console.log(data);
         setText('');
@@ -29,7 +29,7 @@ const addTodo = (text,setText,setToDo)=>{
 const updateTodo = (todoId,text,setToDo,setText,setIsupdating)=>{
 
     axios
-    .post(`${baseUrl}update`,{_id:todoId,text})
+    .post(`${baseUrl}/update`,{_id:todoId,text})
     .then((data)=>{
        setText('')
        setIsupdating(false)
@@ -43,7 +43,7 @@ const updateTodo = (todoId,text,setToDo,setText,setIsupdating)=>{
 const deleteToDo = (_id,setToDo)=>{
 
     axios
-    .post(`${baseUrl}delete`,{_id:_id})
+    .post(`${baseUrl}/delete`,{_id:_id})
     .then((data)=>{
      
         getAllToDo(setToDo)
