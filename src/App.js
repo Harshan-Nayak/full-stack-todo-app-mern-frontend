@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     getAllToDo(setToDo)
-  },[])
+  })
 
 const updateMode = (_id,text)=>{
 setIsupdating(true)
